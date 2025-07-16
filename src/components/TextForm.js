@@ -12,6 +12,12 @@ export default function TextForm(props) {
   const handleClear = () => {
     setText("");
   };
+  const handlecopy=()=>{
+          console.log("copy");
+        var text =document.getElementById("mybox");
+        text.select();
+        navigator.clipboard.writeText(text.value);
+  };
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
@@ -39,6 +45,9 @@ export default function TextForm(props) {
           <button className="btn btn-danger mx-2" onClick={handleClear}>
             Clear
           </button>
+              <button> className="btn btn-danger mx-2" onlcick ={handlecopy}
+              copy
+                </button>
         </div>
       </div>
       <div className="container" style = {{color:props.mode === 'dark' ? 'white' : 'black'}}>
